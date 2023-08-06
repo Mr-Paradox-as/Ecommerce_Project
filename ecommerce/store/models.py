@@ -6,7 +6,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
 
     class Meta:
-
+        #in the models by default the category will be splled like categoryies so we changed the default value below
         verbose_name_plural = 'categories'
 
     def __str__(self):
@@ -18,7 +18,7 @@ class Product(models.Model):
     brand = models.TextField(max_length=300,default='Unbranded')
     description = models.TextField(blank=True)
     slug = models.SlugField(max_length=300)
-    price = models.DecimalField(max_digits=4, decimal_places=2)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
     image = models.ImageField(upload_to = 'images/')
     class Meta:
 
